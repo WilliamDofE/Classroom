@@ -1,0 +1,49 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    padding-bottom: 4px;
+    border-bottom: 2px grey solid;
+    margin-bottom: 8px;
+}
+
+#headerClassroom {
+    color:#008cff;
+    font-size: 24px;
+}
+
+#headerSignIn {
+    position: relative;
+    float: right;
+    top: 50%;
+}
+
+#headerSignUp {
+    position: relative;
+    float: right;
+    top: 50%;
+}
+
+#headerSignIn::before {
+    content: "\00a0|\00a0";
+}
+
+#createSchool {
+    height: 164px;
+    width: 164px;
+    border: 1px grey solid;
+    
+    color: grey;
+    text-align: center;
+    padding-top: 4px;
+}
+
+#headerSignIn {
+    cursor: pointer;
+}
+
+#SignInContainer {
+    display: none;
+    position: relative;
+}
