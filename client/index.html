@@ -55,6 +55,21 @@
             top: 52px;
             border: 1px grey solid;
         }
+		
+		#schoolCreateContainer {
+			display: none;
+			position: absolute;
+			top: 48px;
+			left: 0;
+			width: 90%;
+			height: 87%;
+			border: 1px grey solid;
+			border-radius: 16px;
+			padding: 8px;
+			margin-left: 5%;
+			margin-right: 5%;
+			margin-top: 4px;
+		}
     </style>
 </head>
 <body>
@@ -72,10 +87,19 @@
         </div>
         <span id="headerSignUp">Sign up</span>
     </div>
-    <div id="createSchool">
+    <div id="createSchool" style="cursor: pointer">
         <div id="">Create School</div>
     </div>
+	<div id="schoolCreateContainer">
+		<form id="schoolCreateForm" action="http://localhost:3000/createSchool" method="POST">
+			School name: <input name="schoolName" type="text"><br><br>
+			Private?: <input name="schoolPrivate" type="checkbox"><br><br>
+			Entry password: <input name="entryPassword" type="password"><br><br>
+			<button type="submit">Submit</button>
+		</form>
+	</div>
     
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script>
     //client
@@ -86,6 +110,11 @@
         else
             SignInContainer.style.display = "none";
     }
+	
+	$('#createSchool').click(function() {
+		document.getElementById("createSchool").style.display = "none";
+		document.getElementById("schoolCreateContainer").style.display = "inline";
+	});
     
     //socket
     var socket = io();
