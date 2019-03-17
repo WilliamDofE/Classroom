@@ -35,8 +35,19 @@ window.onclick = function(event) {
   }
 }
 
+fetch('/createSchool')
+  .then((data) => {
+    console.log(data); // => hello
+  });
+
 //socket
 var socket = io();
+
+window.onload = function() {
+  console.log('window loaded');
+  alert('window ready');
+  socket.emit('pageReady');
+}
 
 //sign in
 var signInUsername = document.getElementById("SignInForm-username");
@@ -48,9 +59,8 @@ signIn.onclick = function() {
 }
 
 //other
-socket.on('updateSchool', function(response) {
-  console.log(response);
-  document.getElementById("headerSchoolName").innerHTML = response.school_name;
-  document.getElementById("schoolCreateContainer").style.display = "none";
-  document.getElementById("createContainer").style.display = "inline";
+
+socket.on('pageInfo', function(response) {
+  console.log('page info received');
+  document.getElementById("schoolName").innerHTML = response.school_name;
 });
