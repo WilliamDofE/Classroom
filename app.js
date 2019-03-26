@@ -24,15 +24,16 @@ app.post('/createSchool', function(req, res) {
 	};
 	console.log(response);
   
-  res.send(response);
   res.sendFile(path.join(__dirname, '/client/school/index.html'));
 });
 
 io.on('connection', (socket) => {
+  console.log('connection! hallelujah this is taking forever');
   socket.on('pageReady', function() {
     socket.emit('pageInfo', response);
-    console.log('page ready recieved');
   });
+  console.log('page ready recieved');
 });
+
 serv.listen(3000);
 console.log("Server started on localhost://3000");
