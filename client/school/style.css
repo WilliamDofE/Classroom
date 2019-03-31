@@ -8,56 +8,98 @@ body {
 }
 
 #header {
-  margin: 8;
+  position: fixed;
+  margin: 0;
   padding-bottom: 4px;
+  background-color: white;
   border-bottom: 2px grey solid;
   margin-bottom: 8px;
+  width: 100%;
+  height: 50px;
 }
 
 #headerTitle {
-    color:#008cff;
-    font-size: 24px;
+  color:#008cff;
+  font-size: 24px;
+  display: inline-block;
+  padding: 12px 0px 0px 12px;
+}
+
+#headerSign {
+  padding: 12px 12px 0px 0px;
+  float: right;
+  height: 29px;
+  display: inline-block;
 }
 
 #headerSignIn {
-    position: relative;
-    float: right;
-    top: 50%;
+  position: relative;
+  float: right;
+  top: 50%;
+  vertical-align: middle;
 }
 
 #headerSignUp {
-    position: relative;
-    float: right;
-    top: 50%;
+  position: relative;
+  float: right;
+  top: 50%;
+  vertical-align: middle;
 }
 
 #headerSignIn::before {
-    content: "\00a0|\00a0";
+  content: "\00a0|\00a0";
 }
 
 #headerSignIn {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #SignInContainer {
-    display: none;
-    position: absolute;
-    padding: 2px;
-    right: 8px;
-    top: 52px;
-    border: 1px grey solid;
+  display: none;
+  position: absolute;
+  padding: 2px;
+  right: 8px;
+  top: 52px;
+  border: 1px grey solid;
 }
 
 #schoolInfo {
   display: block;
   background-image: url("/images/slide1pic.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
   background-size: cover;
 }
 
 #schoolName {
-  font-size: 32px;
+  display: block;
+  padding: 32px;
+  font-size: 64px;
+  font-family: Source Code Pro, monospace;
+  text-align: center;
+  color: white;
+  padding-top: 256px;
+}
+
+#schoolIntro {
+  margin: 8;
+}
+
+.create {
+  width: 95%;
+  height: 400px;
+  margin: 0 auto 8;
+  border-radius: 8px;
+  border: 1px solid grey;
+  display: table;
+  overflow: hidden;
+  margin-bottom: 84px;
+}
+
+#createLessonTitle {
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
 }
