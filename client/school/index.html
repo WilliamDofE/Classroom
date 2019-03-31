@@ -1,39 +1,41 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/school/style.css">
 </head>
 <body>
   <div id="header">
     <span id="headerTitle">Classroom</span> <!--image in future-->
     <span id="headerSchoolName"></span>
     <span id="headerClassName"></span>
-    <span id="headerSignIn" onclick="showSignIn()">Sign in</span>
-      <div id="SignInContainer">
-        <form id="SignInForm">
-          Username:<br>
-          <input id="SignInForm-username" type="text" name="username"><br>
-          Password:<br>
-          <input id="SignInForm-password" type="password" name="password">
-          <input id="SignInForm-submit" type="submit" value="Submit">
-        </form>
+    <div id="headerSign">
+      <span id="headerSignIn" onclick="showSignIn()">Sign in</span>
+        <div id="SignInContainer">
+          <form id="SignInForm">
+            Username:<br>
+            <input id="SignInForm-username" type="text" name="username"><br>
+            Password:<br>
+            <input id="SignInForm-password" type="password" name="password">
+            <input id="SignInForm-submit" type="submit" value="Submit">
+          </form>
+      </div>
+      <span id="headerSignUp">Sign up</span>
     </div>
-    <span id="headerSignUp">Sign up</span>
   </div>
   
   <div id="schoolInfo">
-    <span id="schoolName">North Walsham High School</span>
+    <div id="schoolName">North Walsham High School</div>
   </div>
   
   <div id="schoolIntro">
-    <p>This is your School Homepage. Here you can see and change info about your school.</p>
-    <p>It's also where you create Lessons from. By clicking the 'Create Lesson' button, you can make your own fully customizable lesson.</p>
+    <p>This is your School Homepage. Students and teachers will both see this when they log in to their school, but only teachers will have access to their unique features. Here you can see and change info about your school.</p>
+    <p>It's also where you create Lessons from. By clicking the 'Create Lesson' button below, you can make your own fully customizable lesson. Give it a try!</p>
     <p></p>
     <p></p>
   </div>
   
-  <div id="createLesson">
-    
+  <div id="createLesson" class="create" style="cursor: pointer">
+    <div id="createLessonTitle">Create Lesson</div>
   </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
