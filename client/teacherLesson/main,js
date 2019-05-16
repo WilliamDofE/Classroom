@@ -1,0 +1,40 @@
+//client
+function showSignIn() {
+  var signInContainer = document.getElementById("SignInContainer");
+  if(signInContainer.style.display == "none")
+    SignInContainer.style.display = "block";
+  else
+    SignInContainer.style.display = "none";
+}
+
+//socket
+
+let socket = io();
+
+//get data from school page
+
+socket.on('lessonPageInfo', function(lessonResponse) {
+  console.log('lesson page info received');
+  console.log(lessonResponse);
+  document.getElementById("schoolName").innerHTML = lessonResponse.school_name;
+});
+
+window.onload = function() {
+  socket.emit('lessonPageReady');
+  console.log("lesson page ready");
+};
+
+//canvas stuff
+let lessonCanvas = LC.init(
+  document.getElementById('lessonCanvas'),
+  {imageURLPrefix: '/literallycanvas/img'}
+);
+
+let lessonCanvasState;
+
+window.setInterval(function() {
+  lessonCanvasState = lessonCanvas.getSnapshot(['shapes', 'colors']);
+  console.log(lessonCanvasState);
+  
+  socket.emit('updateLessonCanvas', lessonCanvasState);
+}, 1000);
